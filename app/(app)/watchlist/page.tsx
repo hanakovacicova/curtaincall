@@ -16,12 +16,12 @@ export default async function WatchlistPage() {
 
   return (
     <div>
-      <h2 className="text-lg font-semibold mb-4">Wishlist</h2>
+      <h2 className="text-lg font-semibold mb-4">Zoznam prianí</h2>
       {!items || items.length === 0 ? (
         <div className="text-center py-16" style={{ color: 'var(--muted)' }}>
-          <p className="mb-3">Your wishlist is empty.</p>
+          <p className="mb-3">Váš zoznam prianí je prázdny.</p>
           <Link href="/plays" className="text-sm hover:text-[var(--gold)] underline underline-offset-2">
-            Browse plays to add some
+            Prezrite hry a pridajte niektoré
           </Link>
         </div>
       ) : (

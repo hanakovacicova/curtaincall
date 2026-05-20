@@ -25,13 +25,13 @@ export default async function PlaysPage({
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-lg font-semibold">Plays</h2>
+        <h2 className="text-lg font-semibold">Hry</h2>
         <Link
           href="/plays/new"
           className="text-sm px-3 py-1.5 rounded-full border transition-colors hover:border-[var(--gold)] hover:text-[var(--gold)]"
           style={{ borderColor: 'var(--border)', color: 'var(--muted)' }}
         >
-          + Add play
+          + Pridať hru
         </Link>
       </div>
 
@@ -39,7 +39,7 @@ export default async function PlaysPage({
         <input
           name="q"
           defaultValue={q}
-          placeholder="Search by title or playwright…"
+          placeholder="Hľadať podľa názvu alebo dramatika…"
           className="w-full px-4 py-2.5 rounded-lg text-sm border bg-transparent outline-none focus:border-[var(--gold)] transition-colors"
           style={{ borderColor: 'var(--border)', color: 'var(--foreground)' }}
         />
@@ -53,12 +53,12 @@ export default async function PlaysPage({
         </div>
       ) : (
         <div className="text-center py-16" style={{ color: 'var(--muted)' }}>
-          <p>{q ? `No plays found for "${q}"` : 'No plays yet.'}</p>
+          <p>{q ? `Nenašli sa žiadne hry pre „${q}"` : 'Zatiaľ žiadne hry.'}</p>
           <Link
             href="/plays/new"
             className="mt-3 inline-block text-sm hover:text-[var(--gold)] underline underline-offset-2"
           >
-            Add the first one
+            Pridajte prvú
           </Link>
         </div>
       )}

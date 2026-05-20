@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "CurtainCall",
-  description: "Track every play you've ever seen",
+  description: "Váš divadelný denník. Sledujte každé predstavenie, ktoré ste videli.",
   manifest: "/manifest.json",
 };
 

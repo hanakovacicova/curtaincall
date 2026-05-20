@@ -16,8 +16,8 @@ export default function SignupPage() {
 
   async function handleSignup(e: React.FormEvent) {
     e.preventDefault()
-    if (username.length < 3) { setError('Username must be at least 3 characters'); return }
-    if (!/^[a-z0-9_]+$/.test(username)) { setError('Username can only contain lowercase letters, numbers, and underscores'); return }
+    if (username.length < 3) { setError('Používateľské meno musí mať aspoň 3 znaky'); return }
+    if (!/^[a-z0-9_]+$/.test(username)) { setError('Používateľské meno môže obsahovať iba malé písmená, čísla a podčiarkovníky'); return }
 
     setLoading(true)
     setError(null)
@@ -43,7 +43,7 @@ export default function SignupPage() {
         <Link href="/" className="block text-center text-2xl font-bold mb-8" style={{ color: 'var(--gold)' }}>
           CurtainCall
         </Link>
-        <h1 className="text-xl font-semibold mb-6 text-center">Create account</h1>
+        <h1 className="text-xl font-semibold mb-6 text-center">Vytvoriť účet</h1>
         <form onSubmit={handleSignup} className="flex flex-col gap-3">
           <input
             type="email"
@@ -55,7 +55,7 @@ export default function SignupPage() {
             style={fieldStyle}
           />
           <input
-            placeholder="Username (e.g. theatrefan)"
+            placeholder="Používateľské meno (napr. divadelnik)"
             value={username}
             onChange={e => setUsername(e.target.value.toLowerCase())}
             required
@@ -64,7 +64,7 @@ export default function SignupPage() {
           />
           <input
             type="password"
-            placeholder="Password (min 6 characters)"
+            placeholder="Heslo (min. 6 znakov)"
             value={password}
             onChange={e => setPassword(e.target.value)}
             required
@@ -79,13 +79,13 @@ export default function SignupPage() {
             className="w-full py-3 rounded-full font-medium text-sm mt-1 transition-opacity disabled:opacity-50"
             style={{ background: 'var(--gold)', color: '#0f0f0f' }}
           >
-            {loading ? 'Creating account…' : 'Get started'}
+            {loading ? 'Vytváram účet…' : 'Začať'}
           </button>
         </form>
         <p className="text-center text-sm mt-6" style={{ color: 'var(--muted)' }}>
-          Already have an account?{' '}
+          Máte už účet?{' '}
           <Link href="/login" className="hover:text-[var(--gold)] underline underline-offset-2">
-            Sign in
+            Prihlásiť sa
           </Link>
         </p>
       </div>

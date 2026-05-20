@@ -52,9 +52,9 @@ export default async function ProfilePage({ params }: { params: Promise<{ userna
           <p className="text-sm mt-0.5" style={{ color: 'var(--muted)' }}>@{profile.username}</p>
           {profile.bio && <p className="text-sm mt-2 leading-relaxed" style={{ color: '#bbb' }}>{profile.bio}</p>}
           <div className="flex gap-4 mt-3 text-sm" style={{ color: 'var(--muted)' }}>
-            <span><strong style={{ color: 'var(--foreground)' }}>{logs.length}</strong> plays seen</span>
-            <span><strong style={{ color: 'var(--foreground)' }}>{followerCount}</strong> followers</span>
-            <span><strong style={{ color: 'var(--foreground)' }}>{followingCount}</strong> following</span>
+            <span><strong style={{ color: 'var(--foreground)' }}>{logs.length}</strong> videných hier</span>
+            <span><strong style={{ color: 'var(--foreground)' }}>{followerCount}</strong> sledovateľov</span>
+            <span><strong style={{ color: 'var(--foreground)' }}>{followingCount}</strong> sledovaných</span>
           </div>
         </div>
         {!isOwnProfile && user && (
@@ -63,7 +63,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ userna
       </div>
 
       {logs.length === 0 ? (
-        <p className="text-sm" style={{ color: 'var(--muted)' }}>No plays logged yet.</p>
+        <p className="text-sm" style={{ color: 'var(--muted)' }}>Zatiaľ žiadne záznamy.</p>
       ) : (
         years.map(year => (
           <section key={year} className="mb-6">

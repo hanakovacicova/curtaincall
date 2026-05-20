@@ -30,7 +30,7 @@ export default function PlayCard({ play, logCount }: Props) {
         )}
         {logCount !== undefined && (
           <span className="text-xs" style={{ color: 'var(--muted)' }}>
-            {logCount} {logCount === 1 ? 'log' : 'logs'}
+            {logCount} {logCount === 1 ? 'záznam' : logCount < 5 ? 'záznamy' : 'záznamov'}
           </span>
         )}
       </div>

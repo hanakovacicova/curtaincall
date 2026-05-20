@@ -32,7 +32,7 @@ export default function LoginPage() {
         <Link href="/" className="block text-center text-2xl font-bold mb-8" style={{ color: 'var(--gold)' }}>
           CurtainCall
         </Link>
-        <h1 className="text-xl font-semibold mb-6 text-center">Sign in</h1>
+        <h1 className="text-xl font-semibold mb-6 text-center">Prihlásiť sa</h1>
         <form onSubmit={handleLogin} className="flex flex-col gap-3">
           <input
             type="email"
@@ -45,7 +45,7 @@ export default function LoginPage() {
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Heslo"
             value={password}
             onChange={e => setPassword(e.target.value)}
             required
@@ -59,13 +59,13 @@ export default function LoginPage() {
             className="w-full py-3 rounded-full font-medium text-sm mt-1 transition-opacity disabled:opacity-50"
             style={{ background: 'var(--gold)', color: '#0f0f0f' }}
           >
-            {loading ? 'Signing in…' : 'Sign in'}
+            {loading ? 'Prihlasovanie…' : 'Prihlásiť sa'}
           </button>
         </form>
         <p className="text-center text-sm mt-6" style={{ color: 'var(--muted)' }}>
-          No account?{' '}
+          Nemáte účet?{' '}
           <Link href="/signup" className="hover:text-[var(--gold)] underline underline-offset-2">
-            Create one
+            Vytvoriť
           </Link>
         </p>
       </div>

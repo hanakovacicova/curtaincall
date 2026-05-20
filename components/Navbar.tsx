@@ -70,7 +70,7 @@ export default function Navbar() {
                 style={{ borderColor: 'var(--border)', color: 'var(--muted)' }}
               >
                 <PlusCircle size={14} />
-                Log play
+                Zapísať hru
               </Link>
               <button
                 onClick={handleSignOut}
@@ -86,7 +86,7 @@ export default function Navbar() {
               className="text-sm px-4 py-1.5 rounded-full border transition-colors hover:border-[var(--gold)] hover:text-[var(--gold)]"
               style={{ borderColor: 'var(--border)', color: 'var(--muted)' }}
             >
-              Sign in
+              Prihlásiť sa
             </Link>
           )}
         </div>
@@ -95,12 +95,12 @@ export default function Navbar() {
       {/* Bottom nav (mobile) */}
       <nav className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around px-4 py-2 border-t"
         style={{ background: 'var(--background)', borderColor: 'var(--border)' }}>
-        {navLink('/', 'Home', BookOpen)}
-        {navLink('/plays', 'Plays', Search)}
-        {user && navLink('/watchlist', 'Wishlist', Heart)}
+        {navLink('/', 'Domov', BookOpen)}
+        {navLink('/plays', 'Hry', Search)}
+        {user && navLink('/watchlist', 'Zoznam prianí', Heart)}
         {user && username
-          ? navLink(`/profile/${username}`, 'Profile', UserIcon)
-          : !user && navLink('/login', 'Sign in', UserIcon)}
+          ? navLink(`/profile/${username}`, 'Profil', UserIcon)
+          : !user && navLink('/login', 'Prihlásiť sa', UserIcon)}
       </nav>
     </>
   )

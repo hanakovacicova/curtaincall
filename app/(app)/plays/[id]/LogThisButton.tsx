@@ -42,7 +42,7 @@ export default function LogThisButton({ productions, userId }: Props) {
         className="text-sm px-3 py-1.5 rounded-full font-medium transition-colors"
         style={{ background: 'var(--gold)', color: '#0f0f0f' }}
       >
-        Log this
+        Zapísať
       </button>
 
       {open && (
@@ -50,16 +50,16 @@ export default function LogThisButton({ productions, userId }: Props) {
           <div className="w-full max-w-md rounded-2xl p-5 flex flex-col gap-4"
             style={{ background: 'var(--surface-2)' }}
             onClick={e => e.stopPropagation()}>
-            <h3 className="font-semibold">Log this production</h3>
+            <h3 className="font-semibold">Zapísať túto inscenáciu</h3>
 
             {productions.length > 1 && (
               <div>
-                <label className="text-xs mb-1 block" style={{ color: 'var(--muted)' }}>Production</label>
+                <label className="text-xs mb-1 block" style={{ color: 'var(--muted)' }}>Inscenácia</label>
                 <select value={selectedProd} onChange={e => setSelectedProd(e.target.value)}
                   className={fieldClass} style={{ ...fieldStyle, background: 'var(--surface)' }}>
                   {productions.map(p => (
                     <option key={p.id} value={p.id}>
-                      {[p.venue, p.city, p.year].filter(Boolean).join(' · ') || 'Unknown production'}
+                      {[p.venue, p.city, p.year].filter(Boolean).join(' · ') || 'Neznáma inscenácia'}
                     </option>
                   ))}
                 </select>
@@ -67,12 +67,12 @@ export default function LogThisButton({ productions, userId }: Props) {
             )}
 
             <div>
-              <label className="text-xs mb-1 block" style={{ color: 'var(--muted)' }}>Date seen</label>
+              <label className="text-xs mb-1 block" style={{ color: 'var(--muted)' }}>Dátum návštevy</label>
               <input type="date" value={watchedAt} onChange={e => setWatchedAt(e.target.value)} className={fieldClass} style={fieldStyle} />
             </div>
 
             <div>
-              <label className="text-xs mb-1 block" style={{ color: 'var(--muted)' }}>Rating</label>
+              <label className="text-xs mb-1 block" style={{ color: 'var(--muted)' }}>Hodnotenie</label>
               <div className="flex gap-1">
                 {[1,2,3,4,5].map(s => (
                   <button key={s} type="button" onClick={() => setRating(s === rating ? 0 : s)} className="text-xl">
@@ -83,18 +83,18 @@ export default function LogThisButton({ productions, userId }: Props) {
             </div>
 
             <div>
-              <label className="text-xs mb-1 block" style={{ color: 'var(--muted)' }}>Review</label>
-              <textarea value={review} onChange={e => setReview(e.target.value)} rows={3} className={fieldClass} style={fieldStyle} placeholder="What did you think?" />
+              <label className="text-xs mb-1 block" style={{ color: 'var(--muted)' }}>Recenzia</label>
+              <textarea value={review} onChange={e => setReview(e.target.value)} rows={3} className={fieldClass} style={fieldStyle} placeholder="Čo si myslíte?" />
             </div>
 
             <div className="flex gap-2">
               <button onClick={() => setOpen(false)} className="flex-1 py-2 rounded-full text-sm border transition-colors"
                 style={{ borderColor: 'var(--border)', color: 'var(--muted)' }}>
-                Cancel
+                Zrušiť
               </button>
               <button onClick={save} disabled={loading} className="flex-1 py-2 rounded-full text-sm font-medium disabled:opacity-50"
                 style={{ background: 'var(--gold)', color: '#0f0f0f' }}>
-                {loading ? 'Saving…' : 'Save'}
+                {loading ? 'Ukladám…' : 'Uložiť'}
               </button>
             </div>
           </div>

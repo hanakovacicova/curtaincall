@@ -33,7 +33,7 @@ export default function AddToWatchlistButton({ playId, userId, initialOnWatchlis
       }}
     >
       <Heart size={14} fill={on ? 'var(--gold)' : 'none'} />
-      {on ? 'On wishlist' : 'Want to see'}
+      {on ? 'V zozname prianí' : 'Chcem vidieť'}
     </button>
   )
 }

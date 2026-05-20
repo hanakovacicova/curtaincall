@@ -32,10 +32,9 @@ export default function FollowButton({ followerId, followingId, initialIsFollowi
       style={{
         borderColor: following ? 'var(--gold)' : 'var(--border)',
         color: following ? 'var(--gold)' : 'var(--muted)',
-        background: following ? 'transparent' : 'transparent',
       }}
     >
-      {following ? 'Following' : 'Follow'}
+      {following ? 'Sledujem' : 'Sledovať'}
     </button>
   )
 }

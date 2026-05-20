@@ -58,7 +58,7 @@ export default async function PlayPage({ params }: { params: Promise<{ id: strin
           <div className="flex items-center gap-2 mt-3">
             <span className="text-lg" style={{ color: 'var(--gold)' }}>{'★'.repeat(Math.round(avgRating))}</span>
             <span className="text-sm" style={{ color: 'var(--muted)' }}>
-              {avgRating.toFixed(1)} · {typedLogs.filter(l => l.rating).length} ratings
+              {avgRating.toFixed(1)} · {typedLogs.filter(l => l.rating).length} hodnotení
             </span>
           </div>
         )}
@@ -77,13 +77,13 @@ export default async function PlayPage({ params }: { params: Promise<{ id: strin
 
       {productions && productions.length > 0 && (
         <section className="mb-6">
-          <h2 className="text-sm uppercase tracking-widest mb-3" style={{ color: 'var(--gold)' }}>Productions</h2>
+          <h2 className="text-sm uppercase tracking-widest mb-3" style={{ color: 'var(--gold)' }}>Inscenácie</h2>
           <div className="flex flex-col gap-2">
             {productions.map(prod => (
               <div key={prod.id} className="p-3 rounded-lg border text-sm"
                 style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
                 {[prod.venue, prod.city, prod.year].filter(Boolean).join(' · ')}
-                {prod.director && <span style={{ color: 'var(--muted)' }}> · dir. {prod.director}</span>}
+                {prod.director && <span style={{ color: 'var(--muted)' }}> · réž. {prod.director}</span>}
               </div>
             ))}
           </div>
@@ -92,10 +92,10 @@ export default async function PlayPage({ params }: { params: Promise<{ id: strin
 
       <section>
         <h2 className="text-sm uppercase tracking-widest mb-3" style={{ color: 'var(--gold)' }}>
-          Logs ({typedLogs.length})
+          Záznamy ({typedLogs.length})
         </h2>
         {typedLogs.length === 0 ? (
-          <p className="text-sm" style={{ color: 'var(--muted)' }}>No logs yet. Be the first!</p>
+          <p className="text-sm" style={{ color: 'var(--muted)' }}>Zatiaľ žiadne záznamy. Buďte prvý!</p>
         ) : (
           <div className="flex flex-col gap-3">
             {typedLogs.map(log => <LogCard key={log.id} log={log} showUser />)}
