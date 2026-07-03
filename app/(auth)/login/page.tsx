@@ -62,7 +62,12 @@ export default function LoginPage() {
             {loading ? 'Prihlasovanie…' : 'Prihlásiť sa'}
           </button>
         </form>
-        <p className="text-center text-sm mt-6" style={{ color: 'var(--muted)' }}>
+        <p className="text-center text-sm mt-4" style={{ color: 'var(--muted)' }}>
+          <Link href="/forgot-password" className="hover:text-[var(--gold)] underline underline-offset-2">
+            Zabudli ste heslo?
+          </Link>
+        </p>
+        <p className="text-center text-sm mt-3" style={{ color: 'var(--muted)' }}>
           Nemáte účet?{' '}
           <Link href="/signup" className="hover:text-[var(--gold)] underline underline-offset-2">
             Vytvoriť
