@@ -50,3 +50,24 @@ export type WatchlistItem = {
   created_at: string
   play?: Play
 }
+
+export type Theatre = {
+  id: string
+  name: string
+  slug: string
+  city: string
+  website: string | null
+}
+
+export type UpcomingShow = {
+  id: string
+  theatre_id: string
+  title: string
+  slug: string | null
+  description: string | null
+  venue: string | null
+  starts_at: string
+  ticket_url: string | null
+  external_id: string
+  theatre?: Theatre
+}

@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { useEffect, useState } from 'react'
 import { User } from '@supabase/supabase-js'
-import { BookOpen, Search, Heart, User as UserIcon, LogOut, PlusCircle } from 'lucide-react'
+import { BookOpen, Search, Heart, User as UserIcon, LogOut, PlusCircle, CalendarDays } from 'lucide-react'
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -97,6 +97,7 @@ export default function Navbar() {
         style={{ background: 'var(--background)', borderColor: 'var(--border)' }}>
         {navLink('/', 'Domov', BookOpen)}
         {navLink('/plays', 'Hry', Search)}
+        {navLink('/discover', 'Program', CalendarDays)}
         {user && navLink('/watchlist', 'Zoznam prianí', Heart)}
         {user && username
           ? navLink(`/profile/${username}`, 'Profil', UserIcon)
