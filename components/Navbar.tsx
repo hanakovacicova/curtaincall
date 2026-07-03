@@ -26,9 +26,10 @@ export default function Navbar() {
           .then(({ data }) => setUsername(data?.username ?? null))
       }
     })
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_e, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       setUser(session?.user ?? null)
       if (!session?.user) setUsername(null)
+      if (event === 'PASSWORD_RECOVERY') router.push('/reset-password')
     })
     return () => subscription.unsubscribe()
   }, [])
